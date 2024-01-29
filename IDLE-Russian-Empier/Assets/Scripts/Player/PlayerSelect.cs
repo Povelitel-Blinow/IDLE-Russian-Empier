@@ -9,7 +9,7 @@ namespace PlayerCapsule
 
         public void TrySelect()
         {
-            OutlineManager outline = PlayerRaycast.RayCast<OutlineManager>();
+            OutlineManager outline = PlayerRaycast.Instance.RayCast<OutlineManager>();
 
             if (outline == _currentSelectedObject) return;
 

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84efe6d024cd66a45a19367a8cbe8b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _clickable: {fileID: 2114208168601873440}
+  _clickable: {fileID: 5744697032591398513}
 --- !u!1 &2527521250627964753
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,9 +58,9 @@ GameObject:
   - component: {fileID: 4195760067031706801}
   - component: {fileID: 7786923038786723707}
   - component: {fileID: 6139716803513467511}
-  - component: {fileID: 2114208168601873440}
   - component: {fileID: 7562263740922486835}
   - component: {fileID: 8530252267814761225}
+  - component: {fileID: 5744697032591398513}
   m_Layer: 0
   m_Name: BigHouseBroken
   m_TagString: Untagged
@@ -147,18 +147,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6801720435581945659, guid: d12b65f84af7f854fb9c568508a0492d, type: 3}
---- !u!114 &2114208168601873440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2527521250627964753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c21490b23d33d84fadbf3f18a41550a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7562263740922486835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,5 +175,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 697b1585ab00cd74c83f977ad2fe1f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5744697032591398513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2527521250627964753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc16afe0639dd6498fcfbc0525d98b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -7,7 +7,6 @@ namespace BuildingCapluse
         private BuildingPlace _origin;
 
         [SerializeField] private BuildingClickable _clickable;
-        //public BuildingPlace Origitn => _origin;
 
         public void Build(Transform pos, BuildingPlace origin)
         {

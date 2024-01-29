@@ -2,12 +2,26 @@ using UnityEngine;
 
 namespace PlayerCapsule
 {
-    public static class PlayerRaycast
+    public class PlayerRaycast : MonoBehaviour
     {
-        //Idk. Maybe it's better to use singletone pattern
-        public static T RayCast<T>()
+        private Camera _camera;
+
+        public static PlayerRaycast Instance { get; private set; }
+
+        public void Init(Camera camera)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if(Instance == null)
+            {
+                Instance = this;
+                _camera = camera;
+                return;
+            }
+            Destroy(gameObject);
+        }
+
+        public T RayCast<T>()
+        {
+            Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             
             Physics.Raycast(ray, out RaycastHit hit);
 

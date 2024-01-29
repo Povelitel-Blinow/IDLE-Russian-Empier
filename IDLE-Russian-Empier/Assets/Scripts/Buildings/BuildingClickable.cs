@@ -3,6 +3,8 @@ using UnityEngine;
 namespace BuildingCapluse
 {
     [RequireComponent(typeof(MeshCollider))]
+    [RequireComponent(typeof(OutlineManager))]
+
     public class BuildingClickable : Clickable
     {
         private Building _building;

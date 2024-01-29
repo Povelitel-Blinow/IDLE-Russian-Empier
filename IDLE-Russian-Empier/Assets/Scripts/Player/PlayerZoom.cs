@@ -5,6 +5,7 @@ namespace PlayerCapsule
     public class PlayerZoom : MonoBehaviour
     {
         [SerializeField] private Camera _camera;
+        [SerializeField] private Camera _UICamera;
         [SerializeField] private float _zoomSensitivity;
         [SerializeField] private float _zoomingSpeed;
         [SerializeField] private Vector2Int _zoomBorders;
@@ -19,6 +20,8 @@ namespace PlayerCapsule
         public void Zoom()
         {
             _camera.orthographicSize += (_targetSize - _camera.orthographicSize) * _zoomingSpeed * Time.deltaTime;
+            // rewrite
+            _UICamera.orthographicSize = _camera.orthographicSize;
         }
 
         public void SetTargetZoom(float dir)

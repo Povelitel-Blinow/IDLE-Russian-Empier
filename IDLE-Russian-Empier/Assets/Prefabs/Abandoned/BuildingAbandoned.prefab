@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5167840594211740348}
   - component: {fileID: 6513763803269808599}
   - component: {fileID: 7717360186858785000}
-  - component: {fileID: 7276809690859944005}
   - component: {fileID: 9035899624251631733}
   - component: {fileID: 6535080286057119953}
+  - component: {fileID: 2358176518710338017}
   m_Layer: 0
   m_Name: BrokenBuilding
   m_TagString: Untagged
@@ -101,18 +101,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4780716903793858006, guid: d12b65f84af7f854fb9c568508a0492d, type: 3}
---- !u!114 &7276809690859944005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3342807287124035449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c21490b23d33d84fadbf3f18a41550a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &9035899624251631733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +129,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 697b1585ab00cd74c83f977ad2fe1f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2358176518710338017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3342807287124035449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc16afe0639dd6498fcfbc0525d98b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7874918991368971049
@@ -188,4 +188,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84efe6d024cd66a45a19367a8cbe8b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _clickable: {fileID: 7276809690859944005}
+  _clickable: {fileID: 2358176518710338017}

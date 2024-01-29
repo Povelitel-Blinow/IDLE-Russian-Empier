@@ -7,7 +7,7 @@ namespace PlayerCapsule
     {
         public void TryInteract()
         {
-            Clickable requested = PlayerRaycast.RayCast<Clickable>();
+            Clickable requested = PlayerRaycast.Instance.RayCast<Clickable>();
 
             requested?.OnClick();
         }

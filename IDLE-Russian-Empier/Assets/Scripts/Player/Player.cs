@@ -4,16 +4,18 @@ namespace PlayerCapsule
 {
     public class Player : MonoBehaviour
     {
+        [SerializeField] private PlayerRaycast _raycast;
         [SerializeField] private PlayerInput _input;
         [SerializeField] private PlayerMove _move;
         [SerializeField] private PlayerZoom _zoom;
-        [SerializeField] private CameraMove _cameraMove;
+        [SerializeField] private CameraManager _cameraManager;
         [SerializeField] private PlayerInteract _interact;
         [SerializeField] private PlayerSelect _select;
 
         public void Init()
         {
-            _cameraMove.Init(transform);
+            _cameraManager.Init(transform);
+            _raycast.Init(_cameraManager.MainCamera);
             _zoom.Init();
         }
 
@@ -22,7 +24,7 @@ namespace PlayerCapsule
             _move.Move(_input.GetMoveInput());
             _zoom.SetTargetZoom(_input.GetScroll());
 
-            _cameraMove.MoveToPlayer();
+            _cameraManager.MoveCameraToPlayer();
             _zoom.Zoom();
 
             _select.TrySelect();

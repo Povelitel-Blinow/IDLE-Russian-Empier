@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1018338967830624893}
   - component: {fileID: 4358671471471643864}
   - component: {fileID: 1283291727604322582}
-  - component: {fileID: 907790130532145797}
   - component: {fileID: 7305287165158706003}
   - component: {fileID: 4649003958081899888}
+  - component: {fileID: 5209775149581199790}
   m_Layer: 0
   m_Name: House LVL6
   m_TagString: Untagged
@@ -101,18 +101,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5946281318282633067, guid: b7001e51621da624799b3817e14c581e, type: 3}
---- !u!114 &907790130532145797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6357117625966530221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c21490b23d33d84fadbf3f18a41550a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7305287165158706003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +129,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 697b1585ab00cd74c83f977ad2fe1f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5209775149581199790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6357117625966530221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc16afe0639dd6498fcfbc0525d98b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8144603702509851647
@@ -188,4 +188,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84efe6d024cd66a45a19367a8cbe8b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _clickable: {fileID: 907790130532145797}
+  _clickable: {fileID: 5209775149581199790}
