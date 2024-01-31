@@ -16,7 +16,7 @@ namespace BuildingCapluse
 
         public override void OnClick()
         {
-            _building.Upgrade();
+            BuildingPanel.Instance.Show(_building.Origin);
         }
     }
 }

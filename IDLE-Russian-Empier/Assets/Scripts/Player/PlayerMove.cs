@@ -8,7 +8,9 @@ namespace PlayerCapsule
 
         public void Move(Vector2 input)
         {
-            input = input.normalized * _moveSpeed * Time.deltaTime;
+            float scaleRatio = PlayerZoom.Instance.GameScale;
+
+            input = input.normalized * _moveSpeed * scaleRatio * Time.deltaTime;
 
             float newX = input.x + transform.position.x;
             float newZ = input.y + transform.position.z;

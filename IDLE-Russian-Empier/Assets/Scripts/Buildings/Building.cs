@@ -4,9 +4,11 @@ namespace BuildingCapluse
 {
     public class Building : MonoBehaviour
     {
+        [SerializeField] private BuildingClickable _clickable;
+        
         private BuildingPlace _origin;
 
-        [SerializeField] private BuildingClickable _clickable;
+        public BuildingPlace Origin => _origin;
 
         public void Build(Transform pos, BuildingPlace origin)
         {
@@ -21,9 +23,5 @@ namespace BuildingCapluse
         }
         
         public void UnBuild() => Destroy(gameObject);
-        public void Upgrade()
-        {
-            _origin.Upgrade();
-        }
     }
 }

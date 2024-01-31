@@ -12,9 +12,20 @@ namespace PlayerCapsule
 
         private float _targetSize;
 
+        public static PlayerZoom Instance { get; private set; }
+
+        public float GameScale => _targetSize / _zoomBorders.y;
+
         public void Init()
         {
             _targetSize = _camera.orthographicSize;
+
+            if(Instance == null)
+            {
+                Instance = this;
+                return;
+            }
+            Destroy(gameObject);
         }
 
         public void Zoom()

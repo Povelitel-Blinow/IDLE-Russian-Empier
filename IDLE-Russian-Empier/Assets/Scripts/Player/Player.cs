@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace PlayerCapsule
@@ -12,6 +13,9 @@ namespace PlayerCapsule
         [SerializeField] private PlayerInteract _interact;
         [SerializeField] private PlayerSelect _select;
 
+        public Action OnMove;
+        public Action OnZoom;
+
         public void Init()
         {
             _cameraManager.Init(transform);
@@ -21,8 +25,9 @@ namespace PlayerCapsule
 
         private void Update()
         {
-            _move.Move(_input.GetMoveInput());
-            _zoom.SetTargetZoom(_input.GetScroll());
+            CheckMove();
+
+            CheckZoom();
 
             _cameraManager.MoveCameraToPlayer();
             _zoom.Zoom();
@@ -31,6 +36,20 @@ namespace PlayerCapsule
 
             if (_input.GetClick())
                 _interact.TryInteract();
+        }
+
+        private void CheckMove()
+        {
+            Vector2 moveInput = _input.GetMoveInput();
+            _move.Move(moveInput);
+            if (moveInput != Vector2.zero) OnMove?.Invoke();
+        }
+
+        private void CheckZoom()
+        {
+            float scroll = _input.GetScroll();
+            _zoom.SetTargetZoom(scroll);
+            if (scroll != 0f) OnZoom?.Invoke();
         }
     }
 }
