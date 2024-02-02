@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UICansule
+namespace UICapsule
 {
     public class PlayerViewController : MonoBehaviour
     {

@@ -1,16 +1,17 @@
+using BuildingCapluse;
 using TMPro;
 using UnityEngine;
 
-namespace UICansule
+namespace UICapsule
 {
-    public class BuildingUIPanel : MonoBehaviour
+    public class BuildingInfoPanel : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _nameText;
         [SerializeField] private TextMeshProUGUI _infoText;
 
-        public void Show(string name)
+        public void Show(BuildingPlace buildingPlace)
         {
-            _nameText.text = name;
+            _nameText.text = buildingPlace.CurrentBuilding.Name;
             gameObject.SetActive(true);
         }
 

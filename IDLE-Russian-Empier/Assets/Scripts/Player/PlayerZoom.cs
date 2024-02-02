@@ -18,14 +18,10 @@ namespace PlayerCapsule
 
         public void Init()
         {
-            _targetSize = _camera.orthographicSize;
+            if (Instance != null) Destroy(gameObject);
 
-            if(Instance == null)
-            {
-                Instance = this;
-                return;
-            }
-            Destroy(gameObject);
+            Instance = this;
+            _targetSize = _camera.orthographicSize;
         }
 
         public void Zoom()

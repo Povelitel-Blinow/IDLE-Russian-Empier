@@ -1,10 +1,9 @@
-using BuildingCapluse;
 using PlayerCapsule;
 using UnityEngine;
 
 public class Root : MonoBehaviour
 {
-    [SerializeField] private BuildingPlacesInitiator _initiator;
+    [SerializeField] private Village _village;
     [SerializeField] private Player _player;
     [SerializeField] private UIManager _UI;
 
@@ -14,8 +13,8 @@ public class Root : MonoBehaviour
     {
         Application.targetFrameRate = FPS;
 
-        _initiator.Init();
+        _village.Init();
         _player.Init();
-        _UI.Init(ref _player.OnMove, ref _player.OnZoom);
+        _UI.Init(ref _player.OnMove, ref _player.OnZoom, _village);
     }
 }

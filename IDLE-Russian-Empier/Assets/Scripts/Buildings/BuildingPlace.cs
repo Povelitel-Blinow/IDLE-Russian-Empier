@@ -10,6 +10,8 @@ namespace BuildingCapluse
 
         private Building _currentBuilding;
 
+        public Building CurrentBuilding => _currentBuilding;
+
         public void Init() => BuildHere();
 
         public void Upgrade()

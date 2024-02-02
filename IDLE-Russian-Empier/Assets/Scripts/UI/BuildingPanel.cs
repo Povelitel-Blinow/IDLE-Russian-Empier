@@ -1,6 +1,6 @@
+using UnityEngine;
 using DG.Tweening;
 using PlayerCapsule;
-using UnityEngine;
 
 namespace BuildingCapluse
 {
@@ -17,16 +17,14 @@ namespace BuildingCapluse
 
         public void Init()
         {
-            if (Instance == null)
-            {
-                Instance = this;
-                gameObject.SetActive(false);
+            if (Instance != null) Destroy(gameObject);
 
-                _upgradeButton.Init(this);
-                _infoButton.Init(this);
-                return;
-            }
-            Destroy(gameObject);
+            Instance = this;
+
+            gameObject.SetActive(false);
+
+            _upgradeButton.Init(this);
+            _infoButton.Init(this);            
         }
 
         public void Show(BuildingPlace buildingPlace)
@@ -52,10 +50,7 @@ namespace BuildingCapluse
             transform.DOScale(new Vector3(scale, scale, scale), _adaptToScaleTime);
         }
 
-        public void InfoButtonClick()
-        {
-            Debug.Log(1);
-        }
+        public void InfoButtonClick() => UIManager.Instance.ShowInfoPanel(_currentBuildingPlace);
 
         public void UpgradeButtonClick()
         {

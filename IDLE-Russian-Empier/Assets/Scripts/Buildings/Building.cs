@@ -5,9 +5,11 @@ namespace BuildingCapluse
     public class Building : MonoBehaviour
     {
         [SerializeField] private BuildingClickable _clickable;
-        
+        [SerializeField] private string _name = "";
+
         private BuildingPlace _origin;
 
+        public string Name => _name;
         public BuildingPlace Origin => _origin;
 
         public void Build(Transform pos, BuildingPlace origin)
