@@ -1,14 +1,16 @@
-using System;
 using UnityEngine;
+using System;
+using TMPro;
+
 using UICapsule;
 using BuildingCapluse;
-using TMPro;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private BuildingPanel _buildingPanelPrefab;
     [SerializeField] private BuildingInfoPanel _infoPanel;
 
+    [Header("Text")] // I'll make an abstraction later
     [SerializeField] private TextMeshProUGUI _year;
     [SerializeField] private TextMeshProUGUI _money;
     [SerializeField] private TextMeshProUGUI _souls;
@@ -55,6 +57,8 @@ public class UIManager : MonoBehaviour
 
         _year.text = _village.Year.ToString();
     }
+
+    public void ShowBuildingPanel(BuildingPlace place) => _buildingPanel.Show(place);
 
     public void ShowInfoPanel(BuildingPlace place) => _infoPanel.Show(place);
 }

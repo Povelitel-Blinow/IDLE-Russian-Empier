@@ -1,7 +1,7 @@
 namespace BuildingCapluse
 {
-    public class UpgradeButton : Clickable
+    public class UpgradeButton : BuildingPanelButton
     {
-        public override void Click() => BuildingPanel.Instance.UpgradeButtonClick();
+        public override void Click() => _panel.UpgradeButtonClick();
     }
 }

@@ -32,7 +32,7 @@ namespace BuildingCapluse
             _currentBuilding.Build(transform, this);
         }
 
-        public void SetPanel() => BuildingPanel.Instance.Show(this);
+        public void SetPanel() => UIManager.Instance.ShowBuildingPanel(this);
 
         public void NotRaycastTarget() => _currentBuilding.NotRaycastTarget();
 

@@ -353,4 +353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1272204e7ecfdc14b8973f38e47a1fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _infoButton: {fileID: 1856834927681892210}
+  _upgradeButton: {fileID: 1856834926981183489}
   _adaptToScaleTime: 0.75

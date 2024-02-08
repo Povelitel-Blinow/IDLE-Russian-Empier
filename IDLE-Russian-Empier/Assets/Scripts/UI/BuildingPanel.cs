@@ -1,25 +1,26 @@
 using UnityEngine;
 using DG.Tweening;
 using PlayerCapsule;
-using System;
 
 namespace BuildingCapluse
 {
     public class BuildingPanel : MonoBehaviour
     {
+        [Header("Buttons")]
+        [SerializeField] private InfoButton _infoButton;
+        [SerializeField] private UpgradeButton _upgradeButton;
+
+        [Header("Settings")]
         [SerializeField] private float _adaptToScaleTime;
 
         private BuildingPlace _currentBuildingPlace;
 
-        public static BuildingPanel Instance { get; private set; }
-
         public void Init()
         {
-            if (Instance != null) Destroy(gameObject);
+            gameObject.SetActive(false);
 
-            Instance = this;
-
-            gameObject.SetActive(false);           
+            _upgradeButton.Init(this);
+            _infoButton.Init(this);
         }
 
         public void Show(BuildingPlace buildingPlace)

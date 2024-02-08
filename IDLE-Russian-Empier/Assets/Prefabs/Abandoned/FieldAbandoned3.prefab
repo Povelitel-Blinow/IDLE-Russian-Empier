@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _clickable: {fileID: 4669268076687839662}
   _name: "\u041B\u0435\u0441"
+  _constructingTime: 1
 --- !u!1 &7309164044850144215
 GameObject:
   m_ObjectHideFlags: 0

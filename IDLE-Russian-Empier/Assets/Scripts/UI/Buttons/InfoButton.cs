@@ -1,7 +1,7 @@
 namespace BuildingCapluse
 {
-    public class InfoButton : Clickable
+    public class InfoButton : BuildingPanelButton
     {
-        public override void Click() => BuildingPanel.Instance.InfoButtonClick();
+        public override void Click() => _panel.InfoButtonClick();
     }
 }
