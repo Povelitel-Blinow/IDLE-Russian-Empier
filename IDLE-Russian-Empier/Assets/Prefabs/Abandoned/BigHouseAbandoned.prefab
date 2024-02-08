@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3043327030387272235}
   - component: {fileID: 815635666428367795}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BigHouseAbandoned
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 7562263740922486835}
   - component: {fileID: 8530252267814761225}
   - component: {fileID: 5744697032591398513}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BigHouseBroken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
+  outlineWidth: 0
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []

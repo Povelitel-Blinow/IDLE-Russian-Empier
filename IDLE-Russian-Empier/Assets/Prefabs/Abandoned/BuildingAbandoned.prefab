@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9035899624251631733}
   - component: {fileID: 6535080286057119953}
   - component: {fileID: 2358176518710338017}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BrokenBuilding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 678166076398912494}
   - component: {fileID: -7082375866861880652}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BuildingAbandoned
   m_TagString: Untagged
   m_Icon: {fileID: 0}

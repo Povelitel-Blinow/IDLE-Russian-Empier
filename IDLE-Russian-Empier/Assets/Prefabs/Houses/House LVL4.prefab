@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9194289148580675592}
   - component: {fileID: 5116556957714381746}
   - component: {fileID: 6529857422445894325}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: House LVL4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
+  outlineWidth: 0
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -153,7 +153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3050031338039487178}
   - component: {fileID: 8468376480748238659}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: House LVL4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,3 +189,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clickable: {fileID: 6529857422445894325}
+  _name: "\u041A\u0440\u0435\u0441\u0442\u044C\u044F\u043D\u0441\u043A\u0438\u0439
+    \u0414\u043E\u043C \u0423\u0440. 4"

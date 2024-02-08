@@ -4,20 +4,22 @@ namespace BuildingCapluse
 {
     public class BuildingPlace : MonoBehaviour
     {
-        [SerializeField] private BuildingQueue _queue;
+        [SerializeField] private BuildingQueue _queuePrefab;
 
-        private int _buildingIndex = 0;
-
+        private BuildingQueue _buildingQueue;
         private Building _currentBuilding;
 
-        public Building CurrentBuilding => _currentBuilding;
+        public string Name => _currentBuilding.Name;
 
-        public void Init() => BuildHere();
+        public void Init()
+        {
+            _buildingQueue = Instantiate(_queuePrefab);
+            BuildHere();
+        }
 
         public void Upgrade()
         {
-            //rewrite
-            if (_buildingIndex >= _queue.BuildingsQueue.Length) return;
+            if(_buildingQueue.CanUpgrade == false) return;
 
             _currentBuilding.UnBuild();
             _currentBuilding = null;
@@ -26,9 +28,14 @@ namespace BuildingCapluse
         
         private void BuildHere()
         {
-            _currentBuilding = Instantiate(_queue.BuildingsQueue[_buildingIndex]);
+            _currentBuilding = Instantiate(_buildingQueue.GetNextBuilding());
             _currentBuilding.Build(transform, this);
-            _buildingIndex++;
         }
+
+        public void SetPanel() => BuildingPanel.Instance.Show(this);
+
+        public void NotRaycastTarget() => _currentBuilding.NotRaycastTarget();
+
+        public void IsRaycastTarget() => _currentBuilding.IsRaycastTarget();
     }
 }

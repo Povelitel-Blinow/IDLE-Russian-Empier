@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 105833621404056533}
   - component: {fileID: -5492775340028634736}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MillAbandoned
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 307431663841925868}
   - component: {fileID: 6653628089720693724}
   - component: {fileID: 841678024798663055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BrokenMill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

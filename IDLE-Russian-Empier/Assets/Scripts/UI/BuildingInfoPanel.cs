@@ -11,7 +11,7 @@ namespace UICapsule
 
         public void Show(BuildingPlace buildingPlace)
         {
-            _nameText.text = buildingPlace.CurrentBuilding.Name;
+            _nameText.text = buildingPlace.Name;
             gameObject.SetActive(true);
         }
 

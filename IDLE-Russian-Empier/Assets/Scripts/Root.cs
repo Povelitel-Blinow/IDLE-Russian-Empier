@@ -7,7 +7,7 @@ public class Root : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private UIManager _UI;
 
-    private const int FPS = 60;
+    private const int FPS = 10;
 
     private void Awake()
     {

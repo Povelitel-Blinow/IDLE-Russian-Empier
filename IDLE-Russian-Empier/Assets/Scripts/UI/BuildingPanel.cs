@@ -1,14 +1,12 @@
 using UnityEngine;
 using DG.Tweening;
 using PlayerCapsule;
+using System;
 
 namespace BuildingCapluse
 {
     public class BuildingPanel : MonoBehaviour
     {
-        [SerializeField] private UpgradeButton _upgradeButton;
-        [SerializeField] private InfoButton _infoButton;
-
         [SerializeField] private float _adaptToScaleTime;
 
         private BuildingPlace _currentBuildingPlace;
@@ -21,15 +19,16 @@ namespace BuildingCapluse
 
             Instance = this;
 
-            gameObject.SetActive(false);
-
-            _upgradeButton.Init(this);
-            _infoButton.Init(this);            
+            gameObject.SetActive(false);           
         }
 
         public void Show(BuildingPlace buildingPlace)
         {
+            NullLastPlace();
+
             _currentBuildingPlace = buildingPlace;
+
+            buildingPlace.NotRaycastTarget();
 
             float scale = PlayerZoom.Instance.GameScale;
             transform.localScale = new Vector3(scale, scale, scale);
@@ -40,8 +39,17 @@ namespace BuildingCapluse
 
         public void Hide()
         {
-            _currentBuildingPlace = null;
             gameObject.SetActive(false);
+
+            NullLastPlace();
+        }
+
+        private void NullLastPlace()
+        {
+            if (_currentBuildingPlace == null) return;
+
+            _currentBuildingPlace.IsRaycastTarget();
+            _currentBuildingPlace = null;
         }
 
         public void AdaptScale()

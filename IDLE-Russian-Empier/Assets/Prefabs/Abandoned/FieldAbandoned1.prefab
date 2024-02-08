@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5700028270348223104}
   - component: {fileID: -7064280445098873365}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FieldAbandoned1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 3737128814936522550}
   - component: {fileID: 4287074362719141739}
   - component: {fileID: 6671345432960464250}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BrokenField
   m_TagString: Untagged
   m_Icon: {fileID: 0}

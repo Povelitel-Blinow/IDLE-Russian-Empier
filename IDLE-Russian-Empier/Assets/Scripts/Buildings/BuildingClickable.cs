@@ -8,15 +8,19 @@ namespace BuildingCapluse
     public class BuildingClickable : Clickable
     {
         private Building _building;
+        private MeshCollider _meshCollider;
 
         public void Init(Building building)
         {
             _building = building;
+            _meshCollider = GetComponent<MeshCollider>();
         }
 
-        public override void OnClick()
+        public override void Click() => _building.SetPanel();
+
+        public void SetIsRaycastTerget(bool state)
         {
-            BuildingPanel.Instance.Show(_building.Origin);
+            _meshCollider.enabled = state;
         }
     }
 }

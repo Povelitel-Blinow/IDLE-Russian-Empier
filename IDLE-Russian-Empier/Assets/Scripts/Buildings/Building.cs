@@ -10,7 +10,6 @@ namespace BuildingCapluse
         private BuildingPlace _origin;
 
         public string Name => _name;
-        public BuildingPlace Origin => _origin;
 
         public void Build(Transform pos, BuildingPlace origin)
         {
@@ -23,7 +22,13 @@ namespace BuildingCapluse
             if (_clickable == null) Debug.LogError("Clickable is not assigned!");
             _clickable.Init(this);
         }
-        
+
+        public void SetPanel() => _origin.SetPanel();
+
+        public void NotRaycastTarget() => _clickable.SetIsRaycastTerget(false);
+
+        public void IsRaycastTarget() => _clickable.SetIsRaycastTerget(true);
+
         public void UnBuild() => Destroy(gameObject);
     }
 }

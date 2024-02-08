@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6807084395310821074}
   - component: {fileID: -4122338491213074511}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ChurchAbandoned
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 1072622969808706431}
   - component: {fileID: 2269202516257069691}
   - component: {fileID: 4290004182111479406}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Church LVL1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

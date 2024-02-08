@@ -60,7 +60,7 @@ public class QuickOutline : MonoBehaviour {
   private Color outlineColor = Color.white;
 
   [SerializeField, Range(0f, 10f)]
-  private float outlineWidth = 2f;
+  private float outlineWidth = 0f;
 
   [Header("Optional")]
 
@@ -97,6 +97,8 @@ public class QuickOutline : MonoBehaviour {
 
     // Apply material properties immediately
     needsUpdate = true;
+    UpdateMaterialProperties();
+
   }
 
   void OnEnable() {

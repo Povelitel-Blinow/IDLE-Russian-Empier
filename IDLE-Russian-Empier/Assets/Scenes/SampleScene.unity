@@ -1677,7 +1677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f4c08c4d4db0348b55c5e0f3aa1736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _queue: {fileID: 11400000, guid: 8c91e4af880f35b449535ab63bd46336, type: 2}
+  _queuePrefab: {fileID: 11400000, guid: 8c91e4af880f35b449535ab63bd46336, type: 2}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,7 +1737,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 63
+    m_Bits: 191
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -2847,7 +2847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f4c08c4d4db0348b55c5e0f3aa1736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _queue: {fileID: 11400000, guid: 8c91e4af880f35b449535ab63bd46336, type: 2}
+  _queuePrefab: {fileID: 11400000, guid: 8c91e4af880f35b449535ab63bd46336, type: 2}
 --- !u!1001 &1610513558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3235,7 +3235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f4c08c4d4db0348b55c5e0f3aa1736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _queue: {fileID: 11400000, guid: 8c91e4af880f35b449535ab63bd46336, type: 2}
+  _queuePrefab: {fileID: 11400000, guid: 8c91e4af880f35b449535ab63bd46336, type: 2}
 --- !u!1 &2096543813
 GameObject:
   m_ObjectHideFlags: 0
@@ -3280,7 +3280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f4c08c4d4db0348b55c5e0f3aa1736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _queue: {fileID: 11400000, guid: 8c91e4af880f35b449535ab63bd46336, type: 2}
+  _queuePrefab: {fileID: 11400000, guid: 8c91e4af880f35b449535ab63bd46336, type: 2}
 --- !u!1 &2122763683
 GameObject:
   m_ObjectHideFlags: 0
