@@ -21,6 +21,8 @@ namespace PlayerCapsule
             _cameraManager.Init(transform);
             _raycast.Init(_cameraManager.MainCamera);
             _zoom.Init();
+
+            _interact.OnMissClick += MissClickedOrMoved;
         }
 
         private void Update()
@@ -42,7 +44,7 @@ namespace PlayerCapsule
         {
             Vector2 moveInput = _input.GetMoveInput();
             _move.Move(moveInput);
-            if (moveInput != Vector2.zero) OnMove?.Invoke();
+            if (moveInput != Vector2.zero) MissClickedOrMoved();
         }
 
         private void CheckZoom()
@@ -51,5 +53,7 @@ namespace PlayerCapsule
             _zoom.SetTargetZoom(scroll);
             if (scroll != 0f) OnZoom?.Invoke();
         }
+
+        private void MissClickedOrMoved() => OnMove?.Invoke();
     }
 }
