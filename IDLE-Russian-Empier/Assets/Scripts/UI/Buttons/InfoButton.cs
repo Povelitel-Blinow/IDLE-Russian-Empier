@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace BuildingCapluse
 {
     public class InfoButton : BuildingPanelButton
     {
-        public override void Click() => _panel.InfoButtonClick();
+        protected override void ClickAction() => _panel.InfoButtonClick();
     }
 }

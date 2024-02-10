@@ -13,7 +13,6 @@ namespace PlayerCapsule
             Clickable requested = PlayerRaycast.Instance.RayCast<Clickable>();
 
             if (IsMissClick(requested)) return;
-            Debug.Log(1);
             requested.Click();
         }
 

@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace BuildingCapluse
 {
     public class UpgradeButton : BuildingPanelButton
     {
-        public override void Click() => _panel.UpgradeButtonClick();
+        protected override void ClickAction() => _panel.UpgradeButtonClick();
     }
 }

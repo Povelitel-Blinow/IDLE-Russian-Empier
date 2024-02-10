@@ -6,8 +6,41 @@ namespace PlayerCapsule
     public class PlayerSelect : MonoBehaviour
     {
         private OutlineManager _currentSelectedObject;
+        private BuildingPanelButton _currentButton;
 
         public void TrySelect()
+        {
+            TrySelectOutline();
+            TrySelectButton();
+        }
+        
+        private void TrySelectButton()
+        {
+            BuildingPanelButton button = PlayerRaycast.Instance.RayCast<BuildingPanelButton>();
+
+            if (button == null) 
+            {
+                NullButton();
+                return;
+            }
+
+            if (button == _currentButton) return;
+
+            _currentButton = button;
+            _currentButton.Select();
+
+            void NullButton()
+            {
+                if (_currentButton == null) return;
+
+                _currentButton.Deselect();
+                _currentButton = null;
+            }
+        }
+
+        
+
+        private void TrySelectOutline()
         {
             OutlineManager outline = PlayerRaycast.Instance.RayCast<OutlineManager>();
 
@@ -15,20 +48,20 @@ namespace PlayerCapsule
 
             _currentSelectedObject?.Deselect();
 
-            if(outline == null) NullOutline();
+            if (outline == null) NullOutline();
 
-            else if(outline != null) NotNullOutline(outline);
-        }
+            else if (outline != null) NotNullOutline(outline);
 
-        private void NotNullOutline(OutlineManager outline)
-        {
-            _currentSelectedObject = outline;
-            _currentSelectedObject.Select();
-        }
+            void NotNullOutline(OutlineManager outline)
+            {
+                _currentSelectedObject = outline;
+                _currentSelectedObject.Select();
+            }
 
-        private void NullOutline()
-        {
-            _currentSelectedObject = null;
+            void NullOutline()
+            {
+                _currentSelectedObject = null;
+            }
         }
     }
 }
