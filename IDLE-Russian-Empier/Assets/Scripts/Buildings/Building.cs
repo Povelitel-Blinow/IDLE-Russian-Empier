@@ -7,12 +7,14 @@ namespace BuildingCapluse
     {
         [SerializeField] private BuildingClickable _clickable;
         [SerializeField] private string _name = "";
+        [SerializeField] private int _upgradePrice;
 
         [SerializeField] private float _constructingTime = 1;
 
         private BuildingPlace _origin;
 
         public string Name => _name;
+        public int UpgradePrice => _upgradePrice;
 
         public void Build(Transform pos, BuildingPlace origin)
         {

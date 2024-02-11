@@ -420,3 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d2096e2c196194b9c778096d723139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 1856834926981183494}
+  _canUpgrade: {fileID: -234608935, guid: 721123f049ef378499f9d4966c17512d, type: 3}
+  _canNotUpgrade: {fileID: -31809122, guid: 721123f049ef378499f9d4966c17512d, type: 3}
+  _maxLevel: {fileID: -948610925, guid: 721123f049ef378499f9d4966c17512d, type: 3}

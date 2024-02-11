@@ -1,4 +1,5 @@
 using BuildingCapluse;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class Village : MonoBehaviour
@@ -13,11 +14,6 @@ public class Village : MonoBehaviour
     private Souls _souls;
     private Economics _economics;
 
-    public int Souls => _souls.CurrentSouls;
-    public int Money => _economics.Money;
-
-    public int Year => _years.Year;
-
     public static Village Instance { get; private set; }
 
     public void Init()
@@ -30,12 +26,34 @@ public class Village : MonoBehaviour
         _economics = new Economics(_souls, _startMoney);
 
         _placesInitiator.Init();
+
+        _economics.OnChanged += UIManager.Instance.UpdateUpgradeButtonImage;
+
+        _years.OnYearChanged += UIManager.Instance.UpdateYear;
+        _souls.OnSoulsChanged += UIManager.Instance.UpdateSouls;
+        _economics.OnMoneyChanged += UIManager.Instance.UpdateMoneyText;
+
+        NewYear();
+    }
+
+    public bool TryUpgrade(Building building)
+    {
+       if(CheckCanUpgrade(building) == false) return false;
+
+        _economics.AddMoney(-building.UpgradePrice);
+        return true;
+    }
+
+    public bool CheckCanUpgrade(Building building)
+    {
+        if (_economics.Money < building.UpgradePrice) return false;
+
+        return true;
     }
 
     public void NewYear() 
     {
         _years.NewYear();
-
         _souls.NewYear();
         _economics.NewYear();
     }

@@ -29,13 +29,23 @@ namespace BuildingCapluse
 
             _currentBuildingPlace = buildingPlace;
 
-            buildingPlace.NotRaycastTarget();
+            buildingPlace.BecomeNotRaycastTarget();
 
             float scale = PlayerZoom.Instance.GameScale;
             transform.localScale = new Vector3(scale, scale, scale);
 
             transform.position = buildingPlace.transform.position;
+
+            UpdateUpgradeButtonImage();
             gameObject.SetActive(true);
+        }
+
+        private void NullLastPlace()
+        {
+            if (_currentBuildingPlace == null) return;
+
+            _currentBuildingPlace.BecomeIsRaycastTarget();
+            _currentBuildingPlace = null;
         }
 
         public void Hide()
@@ -43,14 +53,6 @@ namespace BuildingCapluse
             gameObject.SetActive(false);
 
             NullLastPlace();
-        }
-
-        private void NullLastPlace()
-        {
-            if (_currentBuildingPlace == null) return;
-
-            _currentBuildingPlace.IsRaycastTarget();
-            _currentBuildingPlace = null;
         }
 
         public void AdaptScale()
@@ -65,13 +67,22 @@ namespace BuildingCapluse
         {
             if (_currentBuildingPlace == null) return;
 
-            //add changing sprites on the button 
             _currentBuildingPlace.Upgrade();
+            UpdateUpgradeButtonImage();
+        }
+
+        public void UpdateUpgradeButtonImage()
+        {
+            //3 references, but can be 2
+            if(_currentBuildingPlace == null) return;
+
+            var state = _currentBuildingPlace.GetButtonState();
+            _upgradeButton.UpdateState(state);
         }
 
         private void OnDestroy()
         {
             transform.DOKill();
         }
-    }
+    } 
 }

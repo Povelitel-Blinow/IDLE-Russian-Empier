@@ -192,6 +192,7 @@ MonoBehaviour:
   _clickable: {fileID: 6529857422445894325}
   _name: "\u041A\u0440\u0435\u0441\u0442\u044C\u044F\u043D\u0441\u043A\u0438\u0439
     \u0414\u043E\u043C \u0423\u0440. 4"
+  _upgradePrice: 300
   _constructingTime: 1
 --- !u!1001 &1507635568760436621
 PrefabInstance:

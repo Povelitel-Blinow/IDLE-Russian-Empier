@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Years : MonoBehaviour
@@ -8,13 +9,15 @@ public class Years : MonoBehaviour
 
     private int _currentYear = StartYear;
 
-    public const int StartYear = 1775;
+    public const int StartYear = 1774;
 
-    public int Year => _currentYear;
+    public Action<int> OnYearChanged;
 
     public void NewYear()
     {
         _currentYear += 1;
+
+        OnYearChanged?.Invoke(_currentYear);
     }
 
     public int GetYearDifficulty()

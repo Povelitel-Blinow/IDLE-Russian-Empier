@@ -13,17 +13,17 @@ namespace BuildingCapluse
 
         public void Select()
         {
-            Debug.Log("Button Selected");
+            //Debug.Log("Button Selected");
         }
 
         public void Deselect()
         {
-            Debug.Log("Button Deselected");
+            //Debug.Log("Button Deselected");
         }
 
         public sealed override void Click()
         {
-            Debug.Log("Button Clicked");
+            //Debug.Log("Button Clicked");
             ClickAction();
         }
 

@@ -1,3 +1,5 @@
+using System;
+
 public class Economics
 {
     private int _money;
@@ -6,20 +8,25 @@ public class Economics
 
     public int Money => _money;
 
+    public Action OnChanged;
+    public Action<int> OnMoneyChanged;
+
     public Economics(Souls souls, int startMoney)
     {
         _souls = souls;
         _money = startMoney;
     }
 
+    public void NewYear()
+    {
+        AddMoney(_souls.GetCurrentSouls() * 10);
+    }
     public void AddMoney(int additionMoney)
     {
         _money += additionMoney;
         _money = _money > 0 ? _money : 0;
-    }
 
-    public void NewYear()
-    {
-
+        OnMoneyChanged?.Invoke(_money);
+        OnChanged?.Invoke();
     }
 }

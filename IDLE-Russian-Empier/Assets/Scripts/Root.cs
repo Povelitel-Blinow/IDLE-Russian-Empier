@@ -13,8 +13,9 @@ public class Root : MonoBehaviour
     {
         Application.targetFrameRate = FPS;
 
-        _village.Init();
+        
         _player.Init();
-        _UI.Init(ref _player.OnMove, ref _player.OnZoom, _village);
+        _UI.Init(ref _player.OnMove, ref _player.OnZoom);
+        _village.Init();
     }
 }

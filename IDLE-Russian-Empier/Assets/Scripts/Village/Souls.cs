@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Souls
@@ -6,7 +7,7 @@ public class Souls
 
     private Years _years;
 
-    public int CurrentSouls => _currentSouls;
+    public Action<int> OnSoulsChanged;
 
     public Souls(Years years, int startSouls) 
     {
@@ -18,6 +19,8 @@ public class Souls
     {
         Died();
         NewBorns();
+
+        OnSoulsChanged?.Invoke(_currentSouls);
     }
 
     private void NewBorns()
@@ -29,7 +32,9 @@ public class Souls
     {
         int yearRatio = _years.GetYearDifficulty();
 
-        Debug.Log($"Dif = {yearRatio}");
+        //Debug.Log($"Dif = {yearRatio}");
         _currentSouls -= Mathf.FloorToInt(Mathf.FloorToInt(_currentSouls / 20) * yearRatio);
     }
+
+    public int GetCurrentSouls() => _currentSouls;
 }

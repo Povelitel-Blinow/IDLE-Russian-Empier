@@ -17,11 +17,9 @@ public class UIManager : MonoBehaviour
 
     private BuildingPanel _buildingPanel;
 
-    private Village _village;
-
     public static UIManager Instance { get; private set; }
 
-    public void Init(ref Action OnMove, ref Action OnZoom, Village village)
+    public void Init(ref Action OnMove, ref Action OnZoom)
     {
         if (Instance != null) Destroy(gameObject);
 
@@ -32,8 +30,6 @@ public class UIManager : MonoBehaviour
 
         OnMove += HideUI;
         OnZoom += AdaptUIScale;
-
-        _village = village;
     }
 
     private void HideUI()
@@ -47,18 +43,27 @@ public class UIManager : MonoBehaviour
         _buildingPanel.AdaptScale();
     }
 
-    public void NewYear()
+    public void NewYearButtonClickDebug()
     {
-        _village.NewYear();
-
-        _money.text = _village.Money.ToString();
-
-        _souls.text = _village.Souls.ToString();
-
-        _year.text = _village.Year.ToString();
+        Village.Instance.NewYear();
     }
+
+    public void UpdateMoneyText(int money) => _money.text = money.ToString();
+
+    public void UpdateSouls(int souls) => _souls.text = souls.ToString();
+
+    public void UpdateYear(int year) => _year.text = year.ToString();
+
+    public void UpdateUpgradeButtonImage() => _buildingPanel.UpdateUpgradeButtonImage();
 
     public void ShowBuildingPanel(BuildingPlace place) => _buildingPanel.Show(place);
 
     public void ShowInfoPanel(BuildingPlace place) => _infoPanel.Show(place);
+
+    public enum UpgradeButtonState
+    {
+        CanUpgrade,
+        CanNotUpgrade,
+        MaxLevel
+    }
 }

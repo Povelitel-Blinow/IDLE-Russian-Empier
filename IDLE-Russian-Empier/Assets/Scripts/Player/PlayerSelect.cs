@@ -38,8 +38,6 @@ namespace PlayerCapsule
             }
         }
 
-        
-
         private void TrySelectOutline()
         {
             OutlineManager outline = PlayerRaycast.Instance.RayCast<OutlineManager>();
